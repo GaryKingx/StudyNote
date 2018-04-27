@@ -7,17 +7,17 @@
 
 ## 基本算法排序：
 
-选择排序
+[选择排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/ChooseSort.java)
 
-插入排序
+[插入排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/InsertSort.java)
 
-快速排序
+[快速排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/QuickSort.java)
 
-冒泡排序
+[冒泡排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/BubbleSort.java)
 
-哈希排序
+[希尔排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/ShellSort.java)
 
-归并排序
+[归并排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/MergeSort.java)
 
 堆排序
 
