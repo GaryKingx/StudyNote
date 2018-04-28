@@ -14,9 +14,8 @@ package algorithms;
 public class GodOfStock {
 
     public static int sort(int day) {
-        //???
+
         int money;
-        //????||?????
         int minusMoney = (int) (Math.sqrt(2 * day + 0.25) - 1.5);
         money = day - 2 * minusMoney;
         return money;
