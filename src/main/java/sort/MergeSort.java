@@ -3,32 +3,32 @@ package sort;
 import java.util.Arrays;
 
 /**
- * �鲢����
+ * 归并排序
  * create by frank
  * on 2017/01/10
- * ʱ�临�Ӷ� ƽ����O(NlogN) ���: O(N^2)
- * �ռ临�Ӷ� N
- * �ȶ��ԣ��ȶ�
- * ����ԭ������
+ * 时间复杂度 平均：O(NlogN) 最差: O(N^2)
+ * 空间复杂度 N
+ * 稳定性：稳定
+ * 不是原地排序
  */
 public class MergeSort {
 
     /**
-     * �鲢����
-     * ���:�����������������ϣ������ϲ���һ���µ������ ���Ѵ��������з�Ϊ���ɸ������У�ÿ��������������ġ�Ȼ���ٰ����������кϲ�Ϊ������������
-     * ʱ�临�Ӷ�ΪO(nlogn)
-     * �ȶ�����ʽ
-     * @param nums ����������
-     * @return �����������
+     * 归并排序
+     * 简介:将两个（或两个以上）有序表合并成一个新的有序表 即把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列
+     * 时间复杂度为O(nlogn)
+     * 稳定排序方式
+     * @param nums 待排序数组
+     * @return 输出有序数组
      */
     public static int[] sort(int[] nums, int low, int high) {
         int mid = (low + high) / 2;
         if (low < high) {
-            // ���
+            // 左边
             sort(nums, low, mid);
-            // �ұ�
+            // 右边
             sort(nums, mid + 1, high);
-            // ���ҹ鲢
+            // 左右归并
             merge(nums, low, mid, high);
         }
         return nums;
@@ -36,11 +36,11 @@ public class MergeSort {
 
     public static void merge(int[] nums, int low, int mid, int high) {
         int[] temp = new int[high - low + 1];
-        int i = low;// ��ָ��
-        int j = mid + 1;// ��ָ��
+        int i = low;// 左指针
+        int j = mid + 1;// 右指针
         int k = 0;
 
-        // �ѽ�С�������Ƶ���������
+        // 把较小的数先移到新数组中
         while (i <= mid && j <= high) {
             if (nums[i] < nums[j]) {
                 temp[k++] = nums[i++];
@@ -49,24 +49,24 @@ public class MergeSort {
             }
         }
 
-        // �����ʣ�������������
+        // 把左边剩余的数移入数组
         while (i <= mid) {
             temp[k++] = nums[i++];
         }
 
-        // ���ұ߱�ʣ�������������
+        // 把右边边剩余的数移入数组
         while (j <= high) {
             temp[k++] = nums[j++];
         }
 
-        // ���������е�������nums����
+        // 把新数组中的数覆盖nums数组
         for (int k2 = 0; k2 < temp.length; k2++) {
             nums[k2 + low] = temp[k2];
         }
     }
 
 
-    // �鲢�����ʵ��
+    // 归并排序的实现
     public static void main(String[] args) {
 
         int[] nums = { 2, 7, 8, 3, 1, 6, 9, 0, 5, 4 };

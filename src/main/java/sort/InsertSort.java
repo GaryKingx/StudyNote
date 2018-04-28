@@ -5,7 +5,10 @@ import java.util.Arrays;
 /**
  * create by frank
  * on 2018/01/10
- * ʱ�临�Ӷ�O(n^2) �ռ临�Ӷ�O(1) �ȶ��ȣ��ȶ�
+ * 时间复杂度: O(N)~O(N^2) 空间复杂度: O(1)
+ * 稳定度：稳定
+ * 原地排序
+ * 效率取决于输入元素的排列情况
  */
 public class InsertSort {
 

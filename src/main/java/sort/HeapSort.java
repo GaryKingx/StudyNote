@@ -5,25 +5,23 @@ import java.util.Arrays;
 /**
  * create by frank
  * on 2018/03/29
- * ������
- * ��������
- * ����˼·����׶���������� �ݼ�
- * �ӵײ������ڵ㣺index = a.length / 2 - 1 �õ��ڵ���������
+ * 堆排序
+ * 基本思路：大顶锥：先序排列 递减
+ * 从底部遍历节点：index = a.length / 2 - 1 得到节点所在索引
  * left_node = index * 2 + 1 ;right_node = index * 2 +2
- * �ȽϽڵ�����ҽڵ�Ĵ�С�����ϴ�ֵ�û����ڵ�λ�ã��ݹ飬���ո��ڵ��ȡ�����ֵ
- * ���ڵ��β��Ҷ�ӽڵ㽻��
- * ����ƽ��ʱ�临�Ӷ�O��nlogn��
+ * 比较节点和左右节点的大小，将较大值置换到节点位置，递归，最终根节点获取到最大值
+ * 父节点和尾部叶子节点交换
  **/
 public class HeapSort {
 
     public static String sort(int[] a) {
 
 
-        //�γɴ�׶�ṹ
+        //形成大顶锥结构
         for (int index = a.length / 2 - 1; index >= 0; index--) {
             rootSort(a, index, a.length - 1);
         }
-        //���ڵ��ƶ���β����ʣ�²��ּ����γɴ�׶�ṹ
+        //根节点移动到尾部，剩下部分继续形成大顶锥结构
         for (int i = a.length - 1; i > 0; i--) {
             int tmp = a[i];
             a[i] = a[0];
@@ -34,93 +32,32 @@ public class HeapSort {
     }
 
     public static void rootSort(int[] a, int index, int length) {
-        //���ڵ�
+        //父节点
         int tmp = a[index];
-        //�����ڵ㣬ѡ����׶ͷ�����ڵ㲢�������αȽϸ��ڵ������ڵ��С
+        //遍历节点，选出大顶锥头部最大节点并往下依次比较父节点和子孙节点大小
         for (int k = 2 * index + 1; k < length; k = k * 2 + 1) {
-            //������ӽڵ�<���ӽڵ�
+            //如果左子节点<右子节点
             if (k + 1 < length && a[k] < a[k + 1]) {
-                //�������游�ڵ���ϴ���һ���ڵ�Ƚ�
+                //便于下面父节点跟较大那一个节点比较
                 k++;
             }
-            //������ڵ�С���ӽڵ�
+            //如果父节点小于子节点
             if (tmp < a[k]) {
-                //���ڵ� = �ӽڵ�
+                //父节点 = 子节点
                 a[index] = a[k];
-                //����ƫ��
+                //索引偏移
                 index = k;
             } else break;
 
         }
-        //������ڵ����������ӽڵ��ظ�ֵ
+        //如果父节点更换，完成子节点重赋值
         a[index] = tmp;
     }
 
 
-    /**
-     * ����Ѳ���
-     * ˼·���ȰѴ��������ַ�������β����Ȼ���β���ڵ㿪ʼʵ�ִ�׶/С��׶�ṹ����
-     *
-     * @param a
-     * @param insertNum
-     * @return
-     */
-    public static String insert(int[] a, int insertNum) {
-
-        a[a.length - 1] = insertNum;
-
-        for (int i = a.length / 2 - 1; i >= 0; i--) {
-            int tmp = a[i];
-            for (int k = i * 2 + 1; k < a.length; k = k * 2 + 1) {
-                if (k + 1 < a.length && a[k] < a[k + 1])
-                    k++;
-                if (tmp < a[k]) {
-                    a[i] = a[k];
-                    i = k;
-                    a[i] = tmp;
-                } else
-                    break;
-            }
-        }
-        return Arrays.toString(a);
-
-    }
-
-    /**
-     * ����ѵ�ɾ������
-     * ˼·��ɾ���ڵ���β���ڵ���н�����Ȼ���ٽ��д�׶/С��׶�ṹ������β��Ҷ�ӽڵ㲻���нṹ��������
-     * @param a
-     * @return
-     */
-    public static String delete(int[] a) {
-        //ͷ�����ֵ������β������
-        a[0] = a[a.length - 1];
-
-        a[a.length - 1] = 0;
-        for (int i = (a.length - 1) / 2 - 1; i >= 0; i--) {
-            int tmp = a[i];
-            for (int k = i * 2 + 1; k < a.length - 1; k = k * 2 + 1) {
-                if (k < a.length - 1 && a[k] < a[k + 1])
-                    k++;
-                if (tmp < a[k]) {
-                    a[i] = a[k];
-                    i = k;
-                    a[i] = tmp;
-                } else break;
-            }
-        }
-        return Arrays.toString(a);
-    }
-
     public static void main(String[] args) {
-        int[] a = {3, 5, 9, 1, 4, 6, 7, 8, 0};
-        int[] b = {90, 85, 70, 60, 80, 30, 20, 10, 50, 40};
-        System.out.println(sort(a));
-        System.out.println(HeapSort.insert(a, 10));
-        System.out.println(HeapSort.delete(b));
-        Integer x = 300;
-        Integer y = 300;
-        System.out.println(x==y);
-
+        int[] a = {3, 5, 9, 1, 4, 6, 7, 8};
+        System.out.println(HeapSort.sort(a));
     }
 }
+

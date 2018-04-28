@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 /**
  * create by frank
- * on 2017/01/11
- * ʱ�临�Ӷ�O(n^2) �ռ临�Ӷ�O(1)
+ * on 2018/01/11
+ * 时间复杂度O(n^2) 空间复杂度O(1)
+ * 稳定性：稳定
+ * 原地排序
  */
 public class BubbleSort {
 
