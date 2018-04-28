@@ -37,7 +37,7 @@
 ## java设计模式
 
 ### 单例模式（七种）
-#### [懒汉模式极其改进（原始、同步方法、双重检查锁、静态内部类）](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/LazyManModel.java)
+#### * [懒汉模式极其改进（原始、同步方法、双重检查锁、静态内部类）](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/LazyManModel.java)
 #### [饿汉模式](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/HungryManModel.java)
 #### [登记模式](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/RegisterModel.java)
 #### [枚举模式](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/EnumModel.java)
