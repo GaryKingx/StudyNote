@@ -19,21 +19,25 @@
 
 [归并排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/MergeSort.java)
 
-堆排序
+[堆排序](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/sort/HeapSort.java)
 
 
 ## 数学算法：
 
-股神
+[股神](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/algorithms/GodOfStock.java)
 
-分苹果
+[分苹果](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/algorithms/BareShare.java)
 
-路灯
+[路灯](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/algorithms/RoadLight.java)
 
-数据翻转
+[表格数据翻转](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/algorithms/BareShare.java)
 
-杨辉三角
+[杨辉三角](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/algorithms/YhTrangle.java)
 
 ## java设计模式
 
 ### 单例模式（七种）
+#### [懒汉模式极其改进（原始、同步方法、双重检查锁、静态内部类）](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/LazyManModel.java)
+#### [饿汉模式](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/HungryManModel.java)
+#### [等级模式](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/RegisterModel.java)
+#### [枚举模式](https://github.com/GaryKingx/StudyNote/blob/master/src/main/java/singleton/EnumModel.java)
