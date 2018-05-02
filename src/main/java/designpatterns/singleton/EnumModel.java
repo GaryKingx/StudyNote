@@ -1,4 +1,4 @@
-package singleton;
+package designpatterns.singleton;
 
 /**
  * Ã¶¾ÙÀàĞÍ

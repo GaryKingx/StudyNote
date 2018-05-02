@@ -49,7 +49,7 @@ public class QuickSort {
 
 
     public static void main(String[] args) {
-        int[] a = {11, 2, 66, 21, 5, 10, 88, 1, 35};
+        int[] a = {1, 2, 66, 21, 5, 10, 88, 111, 35};
 
         System.out.println(QuickSort.sort(a, 0, a.length - 1));
 
